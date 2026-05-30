@@ -8,17 +8,19 @@ urls = (
 )
 ##hace que todoo funcione 
 app = web.application(urls, globals())
+render = web.template.render('templates/')
 
 class Index:
     def GET(self):
-        return 'Hola mundo desde web.py'
+        return str(render.index())
+   
 
 class Clientes:
     def GET(self):
-        return 'Esta es la pagina de CLIENTES'   
+        return str(render.clientes())
 class Usuario:
     def GET(self):
-        return 'Esta es la pagina de USUARIOS'         
+        return str(render.usuario())   
     
 ##ejecuta el servidor 
 if __name__ == "__main__":
