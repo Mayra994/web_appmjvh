@@ -3,8 +3,8 @@ import web
 ##permite saber la direccion de la pagina
 urls = (
     '/', 'Index',
-    '/Clientes', 'Clientes',
-    '/Usuario','Usuario',
+    '/clientes', 'Clientes',
+    '/usuario','Usuario',
 )
 ##hace que todoo funcione 
 app = web.application(urls, globals())
@@ -12,15 +12,15 @@ render = web.template.render('templates/')
 
 class Index:
     def GET(self):
-        return str(render.index())
+        return render.index()
    
 
 class Clientes:
     def GET(self):
-        return str(render.clientes())
+        return render.clientes()
 class Usuario:
     def GET(self):
-        return str(render.usuario())   
+        return render.usuario()
     
 ##ejecuta el servidor 
 if __name__ == "__main__":
