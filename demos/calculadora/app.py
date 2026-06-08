@@ -15,6 +15,9 @@ class Index:
 class Calculadora:
     def GET(self):
         return render.calculadora()
+    def POST(self):
+        formulario = web.input()
+        return f"Formulario:{formulario}"
 
     
 
