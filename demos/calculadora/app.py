@@ -1,4 +1,5 @@
 import web
+import math
 urls = (
     '/', 'Index',
     '/calculadora', 'Calculadora'
@@ -25,11 +26,25 @@ class Calculadora:
         numero_2 = float(formulario ['numero_2'])
         resultado = numero_1 + numero_2
 
-    def POST(self):
-        formulario = web.input()
-        numero_1 = float(formulario ['numero_1'])
-        numero_2 = float(formulario ['numero_2'])
-        resultado = numero_1 - numero_2
+        operacion = formulario.get('operacion')
+        if operacion == "sumar":
+            resultado = numero_1 + numero_2
+        elif operacion == "restar":
+            resultado = numero_1 - numero_2    
+        elif operacion ==  "multiplicar":
+            resultado = numero_1 * numero_2
+        elif operacion == "dividir":
+            if numero_2 !=0:
+                resultado = numero_1 / numero_2
+        elif operacion == "raiz cuadrada":
+            if numero_1 >=0:
+                resultado = math.sqrt(numero_1)
+        elif operacion == "potencia":
+            resultado = numero_1 ** numero_2  
+        elif operacion =="modulo":
+            resultado = numero_1 % numero_2
+                 
+
 
     
 
