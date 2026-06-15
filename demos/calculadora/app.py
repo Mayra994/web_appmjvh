@@ -25,8 +25,8 @@ class Calculadora:
         numero_1 = float(formulario ['numero_1'])
         numero_2 = float(formulario ['numero_2'])
         resultado = numero_1 + numero_2
-
         operacion = formulario.get('operacion')
+
         if operacion == "sumar":
             resultado = numero_1 + numero_2
         elif operacion == "restar":
@@ -45,9 +45,6 @@ class Calculadora:
             resultado = numero_1 % numero_2
                  
 
-
-    
-
         print(f"Tipo de dato de numero_1: {type(numero_1)}")
         print(f"Tipo de dato de numero_2: {type(numero_2)}")
 
@@ -56,3 +53,4 @@ class Calculadora:
     
 if __name__ == "__main__":
     app.run()
+    
